@@ -56,3 +56,11 @@ border-radius: 4px;
 .img {
   object-fit: contain;
 }
+
+@media screen and (max-width: 500px) {
+  .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+}
