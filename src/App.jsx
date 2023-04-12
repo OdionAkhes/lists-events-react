@@ -1,8 +1,8 @@
 import { useState } from 'react'
 
 import './App.css'
-import Profiles from './components/Profiles'
-import SearchInput from './components/SearchInput'
+import Profiles from './Components/Profiles'
+import SearchInput from './Components/SearchInput'
 function App() {
 const [searchResults, setSearchResults] = useState("");
 
@@ -12,7 +12,7 @@ const [searchResults, setSearchResults] = useState("");
       setSearchResults={setSearchResults} />
       <Profiles
         searchResults={searchResults} 
-        />
+        setSearchResults={setSearchResults} />
     </div>
   );
 }

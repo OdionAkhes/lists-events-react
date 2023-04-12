@@ -1,4 +1,3 @@
-// This should be a Js file since it has no react Component, ProfileData.js
 /** @format */
 const profilesData =
 [
