@@ -1,14 +1,15 @@
 import React,{useState} from 'react'
 import Profile from './Profile'
 import profilesData from './ProfileData'
-const Profiles = ({ searchResults, setSearchResults }) => {
+// I would have preffered getting the filtered data as props in this component 
+const Profiles = ({ searchResults }) => {
   const profiles = profilesData
       .filter((profile) => {
         
       return searchResults.toLowerCase() === ""
         ? profile
-        : profile.firstName.toLowerCase().includes(searchResults) ||
-            profile.lastName.toLowerCase().includes(searchResults);
+        : profile.firstName.toLowerCase().startsWith(searchResults.toLowerCase()) || // remeber that you are searching for a name, meaning the search value has to be the begiining of the name
+            profile.lastName.toLowerCase().startsWith(searchResults.toLowerCase()); // it is better to make the two values case insensitive, so i can get results regardless of my search case
     })
       .map((profile) => {
         
